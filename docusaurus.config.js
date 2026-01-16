@@ -1,7 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
+const {themes} = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -28,8 +29,7 @@ const config = {
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      /** @type {import('@docusaurus/preset-classic').Options} */      ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "/",
@@ -52,11 +52,15 @@ const config = {
         },
       }),
     ],
-  ],
-
-  themeConfig:
+  ],  themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         // Change to project name
         title: "Green Software Patterns",
@@ -65,6 +69,48 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
+          {
+            type: "doc",
+            docId: "catalog/requirements/index",
+            position: "left",
+            label: "Requirements",
+          },
+          {
+            type: "doc",
+            docId: "catalog/architecture/index",
+            position: "left",
+            label: "Architecture",
+          },
+          {
+            type: "doc",
+            docId: "catalog/development/index",
+            position: "left",
+            label: "Development",
+          },
+          {
+            type: "doc",
+            docId: "catalog/operations/index",
+            position: "left",
+            label: "Operations",
+          },
+          {
+            type: "doc",
+            docId: "catalog/testing/index",
+            position: "left",
+            label: "Testing",
+          },
+          {
+            type: "doc",
+            docId: "catalog/decommission/index",
+            position: "left",
+            label: "Decommission",
+          },
+          {
+            type: "doc",
+            docId: "catalog/end-user/index",
+            position: "left",
+            label: "End User",
+          },
           {
             href: "https://greensoftware.foundation/",
             position: "right",
@@ -178,9 +224,7 @@ const config = {
       },
 
       ]
-    }),
-
-  plugins: [
+    }),  plugins: [
     [
       "@docusaurus/plugin-ideal-image",
       {
@@ -189,6 +233,19 @@ const config = {
         min: 640, // min resized image's size. if original is lower, use that size.
         steps: 2, // the max number of images generated between min and max (inclusive)
         disableInDev: false,
+      },
+    ],
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["en"],
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: "/",
+        highlightSearchTermsOnTargetPage: true,
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
       },
     ],
   ],

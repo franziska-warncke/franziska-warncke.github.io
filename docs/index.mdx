@@ -1,9 +1,12 @@
 ---
 sidebar_position: 1
+sidebar_label: Home
 description: "An online open-source database of green software patterns reviewed and curated by the Green Software Foundation"
+hide_table_of_contents: true
 ---
 
 import TeamMember, { TeamMembers } from "@site/src/components/TeamMember";
+import CategoryCard, { CategoryGrid } from "@site/src/components/CategoryCard";
 
 # Green Software Patterns
 
@@ -12,6 +15,53 @@ import TeamMember, { TeamMembers } from "@site/src/components/TeamMember";
 An online open-source database of software patterns reviewed and curated by the Green Software Foundation across a wide range of categories. You can be confident that applying any of our published and live patterns will reduce your software emissions.
 
 Any software practitioner can find the patterns related to their field, technology, or domain. Anyone can submit a pattern that triggers a detailed review process by the Foundation.
+
+## Explore Categories
+
+<CategoryGrid>
+  <CategoryCard
+    title="Requirements"
+    description="Patterns for defining sustainable software requirements and specifications that minimize environmental impact from the start."
+    link="/catalog/requirements/"
+    icon="📋"
+  />
+  <CategoryCard
+    title="Architecture"
+    description="Architectural patterns and design decisions that optimize energy efficiency and reduce carbon emissions."
+    link="/catalog/architecture/"
+    icon="🏗️"
+  />
+  <CategoryCard
+    title="Development"
+    description="Coding practices and development techniques to create more energy-efficient and sustainable software."
+    link="/catalog/development/"
+    icon="💻"
+  />
+  <CategoryCard
+    title="Operations"
+    description="Operational patterns for running and maintaining software systems with minimal environmental footprint."
+    link="/catalog/operations/"
+    icon="⚙️"
+  />
+  <CategoryCard
+    title="Testing"
+    description="Testing strategies and approaches that ensure software sustainability without compromising quality."
+    link="/catalog/testing/"
+    icon="🧪"
+  />
+  <CategoryCard
+    title="Decommission"
+    description="Best practices for responsible software retirement and resource cleanup to minimize waste."
+    link="/catalog/decommission/"
+    icon="🔚"
+  />
+  <CategoryCard
+    title="End User"
+    description="Patterns that empower end users to use software in more sustainable and energy-efficient ways."
+    link="/catalog/end-user/"
+    icon="👤"
+  />
+</CategoryGrid>
 
 ## Getting Started
 
