@@ -2,7 +2,8 @@
 /node_modules
 
 # Production
-/build
+# /build (commented out to deploy to GitHub Pages from main branch)
+/docs-build
 
 # Generated files
 .docusaurus
